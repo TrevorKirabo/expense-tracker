@@ -1,3 +1,3 @@
-amount=10.50
-category='food'
-print("Expense:", category, "-", amount)
+expense = [10.50, 25.00, 7.75]
+for expense in expense:
+    print("Expense:", expense)
