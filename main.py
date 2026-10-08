@@ -1,4 +1,9 @@
-expenses= {"food": 10.50, "gas": 25.00, "coffee": 7.75}
+import json
+try:
+    with open("expenses.json", "r") as f:
+        expenses = json.load(f)
+except FileNotFoundError:
+     expenses = {}
 for category, amount in expenses.items():
     print("Expense:", category, "-", amount)
 total=sum(expenses.values())
@@ -16,3 +21,5 @@ while True:
     print("Added:", new_category, "-", new_amount)
 
 print("Final total:", sum(expenses.values()))
+with open("expenses.json","w") as f:
+    json.dump(expenses, f)
