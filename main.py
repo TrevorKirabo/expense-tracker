@@ -7,7 +7,11 @@ while True:
     new_category = input("Enter a category (or type done to finish): ")
     if new_category == "done":
         break
-    new_amount = float(input("Enter an amount: "))
+    try:
+        new_amount = float(input("Enter an amount: "))
+    except ValueError:
+        print("That's not a number. Try again.")
+        continue
     expenses[new_category] = new_amount
     print("Added:", new_category, "-", new_amount)
 
