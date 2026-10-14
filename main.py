@@ -17,7 +17,7 @@ while True:
     except ValueError:
         print("That's not a number. Try again.")
         continue
-    expenses[new_category] = new_amount
+    expenses[new_category] = expenses.get(new_category, 0) + new_amount
     print("Added:", new_category, "-", new_amount)
 
 print("Final total:", sum(expenses.values()))
