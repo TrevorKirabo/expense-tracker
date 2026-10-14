@@ -4,10 +4,11 @@ try:
         expenses = json.load(f)
 except FileNotFoundError:
      expenses = {}
+print("--- Expense Summary ---")
 for category, amount in expenses.items():
-    print("Expense:", category, "-", amount)
-total=sum(expenses.values())
-print("Total:", total)
+    print(category, ":", amount)
+print("---")
+print("Total:", sum(expenses.values()))
 while True:
     new_category = input("Enter a category (or type done to finish): ")
     if new_category == "done":
