@@ -11,9 +11,17 @@ for category, amount in expenses.items():
 print("---")
 print("Total:", sum(expenses.values()))
 while True:
-    new_category = input("Enter a category (or type done to finish): ")
+    new_category = input("Enter a category (or type done to finish, remove to delete one): ")
     if new_category == "done":
         break
+    if new_category =="remove":
+        to_remove=input("which category do you want to remove? ")
+        if to_remove in expenses:
+            del expenses[to_remove]
+            print("Removed:", to_remove)
+        else:
+            print("That category isn't in your list.")
+        continue
     try:
         new_amount = float(input("Enter an amount: "))
     except ValueError:
