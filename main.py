@@ -1,4 +1,5 @@
 import json
+expenses: dict[str, float]
 try:
     with open("expenses.json", "r") as f:
         expenses = json.load(f)
